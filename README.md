@@ -10,7 +10,7 @@ Project: **Multi-Agent E-commerce RAG (NovaMart)**
 
 A production-grade multi-agent customer support system built with the [Strands Agents SDK](https://github.com/strands-agents/sdk-python) and Amazon Bedrock AgentCore. The system automatically routes customer support requests to specialist agents, retrieves grounded knowledge via **parallel multi-agent RAG**, enforces enterprise safety guardrails, and maintains shared workflow state across agents. It is observable through CloudWatch and X-Ray.
 
-<img width="1140" height="824" alt="NovaMart architecture overview" src="diagrams/architecture-overview.png" />
+<img width="1140" height="824" alt="NovaMart architecture overview" src="diagrams/architecture-overview.jpg" />
 
 ---
 
@@ -44,7 +44,7 @@ Shared State: DynamoDB WorkflowStateTable (with optimistic locking)
 | **RefundAgent** | Claude Sonnet 4.5 | Makes return/refund eligibility decisions (30-day Standard, 60-day Premium) | `get_inventory_context`, `initiate_refund` |
 | **CommunicationAgent** | Claude Sonnet 4.5 | Drafts final, empathetic customer-facing response | `get_full_workflow_context` |
 
-<img width="1165" height="842" alt="Agents and tools reference" src="diagrams/agents-and-tools-reference.png" />
+<img width="1165" height="842" alt="Agents and tools reference" src="diagrams/agents-and-tools-reference.jpg" />
 
 ### Key Features
 
@@ -62,9 +62,9 @@ Shared State: DynamoDB WorkflowStateTable (with optimistic locking)
 |---|---|
 | Completed orchestrator (Tasks 2, 3, 4, 6) | `src/agent_orchestrator.py` |
 | Populated environment file (KB IDs, Runtime ARN, Guardrail ID/version) | `.env` |
-| Test suite result: **120/120** (5 parts, in order) | `submission-screenshots/1a.png` to `1e.png` |
-| X-Ray Service Map (`NovaMart-Orchestrator` → workers → Knowledge Bases) | `submission-screenshots/2a.png` |
-| X-Ray node list and additional trace views | `submission-screenshots/2b.png`, `2c.png` |
+| Test suite result: **120/120** (5 parts, in order) | `submission-screenshots/1a.jpg` to `1e.jpg` |
+| X-Ray Service Map (`NovaMart-Orchestrator` → workers → Knowledge Bases) | `submission-screenshots/2a.jpg` |
+| X-Ray node list and additional trace views | `submission-screenshots/2b.jpg`, `2c.jpg` |
 
 **Implementation summary**
 
@@ -78,27 +78,27 @@ Shared State: DynamoDB WorkflowStateTable (with optimistic locking)
 
 **Test suite: `python tests/test_agent.py all` → 120/120**
 
-![Test result part 1](submission-screenshots/1a.png)
-![Test result part 2](submission-screenshots/1b.png)
-![Test result part 3](submission-screenshots/1c.png)
-![Test result part 4](submission-screenshots/1d.png)
-![Test result part 5](submission-screenshots/1e.png)
+![Test result part 1](submission-screenshots/1a.jpg)
+![Test result part 2](submission-screenshots/1b.jpg)
+![Test result part 3](submission-screenshots/1c.jpg)
+![Test result part 4](submission-screenshots/1d.jpg)
+![Test result part 5](submission-screenshots/1e.jpg)
 
 **X-Ray Service Map**
 
-![X-Ray Service Map](submission-screenshots/2a.png)
+![X-Ray Service Map](submission-screenshots/2a.jpg)
 
 **X-Ray node list**
 
-![X-Ray node list](submission-screenshots/2b.png)
+![X-Ray node list](submission-screenshots/2b.jpg)
 
 **X-Ray additional view**
 
-![X-Ray additional view](submission-screenshots/2c.png)
+![X-Ray additional view](submission-screenshots/2c.jpg)
 
 ---
 
-<img width="1164" height="803" alt="Request flow scenarios" src="diagrams/request-flow-scenarios.png" />
+<img width="1164" height="803" alt="Request flow scenarios" src="diagrams/request-flow-scenarios.jpg" />
 
 ## Prerequisites
 
@@ -195,8 +195,8 @@ novamart-agentcore/
 │   └── cleanup.py                         # Deletes everything the project created (run when done)
 │
 ├── submission-screenshots/                # Test result and X-Ray Service Map screenshots
-│   ├── 1a.png … 1e.png                    # python tests/test_agent.py all → 120/120
-│   └── 2a.png, 2b.png, 2c.png             # X-Ray Service Map and node list
+│   ├── 1a.jpg … 1e.jpg                    # python tests/test_agent.py all → 120/120
+│   └── 2a.jpg, 2b.jpg, 2c.jpg             # X-Ray Service Map and node list
 │
 └── tests/
     └── test_agent.py                      # Automated test suite

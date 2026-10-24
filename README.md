@@ -62,9 +62,9 @@ Shared State: DynamoDB WorkflowStateTable (with optimistic locking)
 |---|---|
 | Completed orchestrator (Tasks 2, 3, 4, 6) | `src/agent_orchestrator.py` |
 | Populated environment file (KB IDs, Runtime ARN, Guardrail ID/version) | `.env` |
-| Test suite result: **120/120** | `screenshots/test-all-120.png` |
-| X-Ray Service Map (`NovaMart-Orchestrator` → workers → Knowledge Bases) | `screenshots/xray-service-map.png` |
-| X-Ray node list (full node names, backup) | `screenshots/xray-service-map-list.png` |
+| Test suite result: **120/120** (5 parts, in order) | `submission-screenshots/1a.png` to `1e.png` |
+| X-Ray Service Map (`NovaMart-Orchestrator` → workers → Knowledge Bases) | `submission-screenshots/2a.png` |
+| X-Ray node list and additional trace views | `submission-screenshots/2b.png`, `2c.png` |
 
 **Implementation summary**
 
@@ -194,10 +194,9 @@ novamart-agentcore/
 │   ├── seed_data.py                       # Data seeding script
 │   └── cleanup.py                         # Deletes everything the project created (run when done)
 │
-├── screenshots/                           # Test result and X-Ray Service Map screenshots
-│   ├── test-all-120.png
-│   ├── xray-service-map.png
-│   └── xray-service-map-list.png
+├── submission-screenshots/                # Test result and X-Ray Service Map screenshots
+│   ├── 1a.png … 1e.png                    # python tests/test_agent.py all → 120/120
+│   └── 2a.png, 2b.png, 2c.png             # X-Ray Service Map and node list
 │
 └── tests/
     └── test_agent.py                      # Automated test suite

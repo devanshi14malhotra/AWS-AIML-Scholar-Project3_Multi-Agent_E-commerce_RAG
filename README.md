@@ -1,8 +1,11 @@
 # Enterprise Multi-Agent Architecture with Amazon Bedrock AgentCore
 
 **Submission by Devanshi Malhotra**
+
 Udacity **Future AWS Agent Engineer** Nanodegree
+
 Course: *Multi-Agent Systems and Protocol Integration on AWS*
+
 Project: **Multi-Agent E-commerce RAG (NovaMart)**
 
 A production-grade multi-agent customer support system built with the [Strands Agents SDK](https://github.com/strands-agents/sdk-python) and Amazon Bedrock AgentCore. The system automatically routes customer support requests to specialist agents, retrieves grounded knowledge via **parallel multi-agent RAG**, enforces enterprise safety guardrails, and maintains shared workflow state across agents. It is observable through CloudWatch and X-Ray.

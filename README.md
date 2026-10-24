@@ -10,7 +10,7 @@ Project: **Multi-Agent E-commerce RAG (NovaMart)**
 
 A production-grade multi-agent customer support system built with the [Strands Agents SDK](https://github.com/strands-agents/sdk-python) and Amazon Bedrock AgentCore. The system automatically routes customer support requests to specialist agents, retrieves grounded knowledge via **parallel multi-agent RAG**, enforces enterprise safety guardrails, and maintains shared workflow state across agents. It is observable through CloudWatch and X-Ray.
 
-<img width="1140" height="824" alt="NovaMart architecture overview" src="diagrams/architecture-overview.jpg" />
+<img width="1140" height="824" alt="NovaMart architecture overview" src="diagrams/architecture-overview.png" />
 
 ---
 
@@ -44,7 +44,7 @@ Shared State: DynamoDB WorkflowStateTable (with optimistic locking)
 | **RefundAgent** | Claude Sonnet 4.5 | Makes return/refund eligibility decisions (30-day Standard, 60-day Premium) | `get_inventory_context`, `initiate_refund` |
 | **CommunicationAgent** | Claude Sonnet 4.5 | Drafts final, empathetic customer-facing response | `get_full_workflow_context` |
 
-<img width="1165" height="842" alt="Agents and tools reference" src="diagrams/agents-and-tools-reference.jpg" />
+<img width="1165" height="842" alt="Agents and tools reference" src="diagrams/agents-and-tools-reference.png" />
 
 ### Key Features
 
@@ -98,7 +98,7 @@ Shared State: DynamoDB WorkflowStateTable (with optimistic locking)
 
 ---
 
-<img width="1164" height="803" alt="Request flow scenarios" src="diagrams/request-flow-scenarios.jpg" />
+<img width="1164" height="803" alt="Request flow scenarios" src="diagrams/request-flow-scenarios.png" />
 
 ## Prerequisites
 

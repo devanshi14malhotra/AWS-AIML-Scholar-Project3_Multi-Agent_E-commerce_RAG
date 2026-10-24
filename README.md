@@ -73,17 +73,25 @@ Shared State: DynamoDB WorkflowStateTable (with optimistic locking)
 
 ### Screenshots
 
-**Test suite: 120/120**
+**Test suite: `python tests/test_agent.py all` → 120/120**
 
-![Test suite 120/120](screenshots/test-all-120.png)
+![Test result part 1](submission-screenshots/1a.png)
+![Test result part 2](submission-screenshots/1b.png)
+![Test result part 3](submission-screenshots/1c.png)
+![Test result part 4](submission-screenshots/1d.png)
+![Test result part 5](submission-screenshots/1e.png)
 
 **X-Ray Service Map**
 
-![X-Ray Service Map](screenshots/xray-service-map.png)
+![X-Ray Service Map](submission-screenshots/2a.png)
 
 **X-Ray node list**
 
-![X-Ray node list](screenshots/xray-service-map-list.png)
+![X-Ray node list](submission-screenshots/2b.png)
+
+**X-Ray additional view**
+
+![X-Ray additional view](submission-screenshots/2c.png)
 
 ---
 
